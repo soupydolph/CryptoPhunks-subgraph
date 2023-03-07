@@ -1,0 +1,25 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: CryptoPhunksV2
+    network: mainnet
+    source:
+      address: "0xf07468ead8cf26c752c676e43c814fee9c8cf402"
+      abi: CryptoPhunksV2
+      startBlock: 12674389
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Phunk
+        - User
+      abis:
+        - name: CryptoPhunksV2
+          file: ./abis/CryptoPhunksV2.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/crypto-phunks-v-2.ts

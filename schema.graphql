@@ -1,0 +1,14 @@
+type Phunk @entity {
+  id: ID!
+  phunkID: BigInt!
+  contentURI: String!
+  createdAtTimestamp: BigInt!
+  creator: User!
+  owner: User!
+}
+
+type User @entity {
+  id: ID!
+  phunks: [Phunk!] @derivedFrom(field: "owner")
+  created: [Phunk!] @derivedFrom(field: "creator")
+}
