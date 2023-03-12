@@ -3,6 +3,9 @@
     "CryptoPhunksV2": {
       "address": "0xf07468ead8cf26c752c676e43c814fee9c8cf402",
       "startBlock": 12674389
+    },
+    "CryptoPhunksToken": {
+      "address": "0xf07468ead8cf26c752c676e43c814fee9c8cf402"
     }
   }
 }

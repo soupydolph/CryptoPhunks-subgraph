@@ -1,14 +1,10 @@
-type Phunk @entity {
+type PhunkTransfer @entity {
   id: ID!
   phunkID: BigInt!
-  contentURI: String!
-  createdAtTimestamp: BigInt!
-  creator: User!
-  owner: User!
-}
-
-type User @entity {
-  id: ID!
-  phunks: [Phunk!] @derivedFrom(field: "owner")
-  created: [Phunk!] @derivedFrom(field: "creator")
+  transactionHash: Bytes!
+  blockTimestamp: BigInt!
+  from: Bytes! # address
+  to: Bytes! # address
+  value: BigInt!
+  gasPrice: BigInt!
 }

@@ -110,9 +110,9 @@ export class Transfer__Params {
   }
 }
 
-export class CryptoPhunksV2 extends ethereum.SmartContract {
-  static bind(address: Address): CryptoPhunksV2 {
-    return new CryptoPhunksV2("CryptoPhunksV2", address);
+export class CryptoPhunksToken extends ethereum.SmartContract {
+  static bind(address: Address): CryptoPhunksToken {
+    return new CryptoPhunksToken("CryptoPhunksToken", address);
   }
 
   MAX_MINTABLE_AT_ONCE(): BigInt {
